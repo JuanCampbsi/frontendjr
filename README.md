@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+<p align="center">
+<h1>
+ FrontEnd Jr 
+ <img width="35" style="border-radius: 10px" height="35" src="https://github.com/JuanCampbsi/frontendjr/blob/02d23696b4eba860c1c633b359351911e6c11c80/src/assets/Impar_fivicon.png" alt="Intro"> 
+</h1>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 🛠  Descrição   
 
-## Available Scripts
+</br>
 
-In the project directory, you can run:
+O projeto tem como o objetivo cadastrar cards para visualização, sendo possível excluir e editar os mesmos.
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Preview 📱
+</br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p align="center">
+  <kbd>
+ <img width="370" style="border-radius: 10px" height="550" src="" alt="Intro"> 
+  </kbd>
+  </br>
+</p>
 
-### `yarn test`
+</br>
+</br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### ⌨ Instalação
+Para a utilização é preciso clonar o repositório, instalar as depedências e rodar o projeto.
 
-### `yarn build`
+```bash
+# Abra o terminal/cmd e em seguida Clone este repositório
+$ git clone https://github.com/JuanCampbsi/frontendjr.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Acesse a pasta do projeto no terminal/cmd
+$ cd frontendjr
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Instale as dependências
+$ yarn install ou apenas yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Execute a aplicação em modo de desenvolvimento
+$ yarn start
 
-### `yarn eject`
+# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+</br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### ⌨ Pilha de tecnologias e bibliotecas
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-   [React](https://github.com/facebook/react) (17.0.38)
+-   [Typescript](https://www.typescriptlang.org/)
+-   [Styled Components](https://www.styled-components.com/)
 
-## Learn More
+</br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👨‍💻 **Author** 💻
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Developed by [_Juan Campos_](https://www.linkedin.com/in/juancampos-ferreira/)
+
