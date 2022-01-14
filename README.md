@@ -1,7 +1,7 @@
 <p align="center">
 <h1>
  FrontEnd Jr 
- <img width="35" style="border-radius: 10px" height="35" src="https://github.com/JuanCampbsi/frontendjr/blob/02d23696b4eba860c1c633b359351911e6c11c80/src/assets/Impar_fivicon.png" alt="Intro"> 
+ <img width="197" style="border-radius: 10px" height="37" src="https://github.com/JuanCampbsi/frontendjr/blob/02d23696b4eba860c1c633b359351911e6c11c80/src/assets/Impar_fivicon.png" alt="Intro"> 
 </h1>
 </p>
 
