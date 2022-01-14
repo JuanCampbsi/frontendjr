@@ -38,17 +38,22 @@ export const SearchLabel = styled.label`
   max-width: 80%;
   width: 65.375rem;
   height: 4.6875rem;
+
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  
   position: relative;
   margin-top: 5.1875rem;
 `;
 
 export const Search = styled.input`
   width: 100%;
-  padding: 1.75rem 4.4375rem 1.75rem 1.4375rem;
+  padding: 1rem 4.400rem 1rem 1.400rem;
+ 
   font-size: 1.5rem;
+
   border: none;
   border-radius: 0.5rem;
 
@@ -58,11 +63,16 @@ export const Search = styled.input`
   }
 `;
 
+export const ButtonSearchContainer = styled.button``;
+
 export const ButtonSearch = styled.img`
   width: 2.125rem;
   height: 2.125rem;
-  position: absolute;
+  
   right: 1.5625rem;
+  position: absolute;
+  bottom:  1.4000rem;
+
 
   @media (max-width: 648px) {
     width: 1.5625rem;
@@ -127,7 +137,7 @@ export const Message = styled.div`
   }
 `;
 
-// Modal Trash
+
 export const ContainerDelete = styled.div`
   width: 27.375rem;
   display: flex;
@@ -225,7 +235,6 @@ export const Paginate = styled.button`
   }
 `;
 
-// Modal Warning
 
 export const ContainerWarning = styled.div`
   display: flex;

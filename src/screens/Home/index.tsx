@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { useQuery } from "react-query";
 
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 import trash from "../../assets/trash.svg";
 import search from "../../assets/search.svg";
 import exit from "../../assets/exit.png";
@@ -36,17 +36,12 @@ import {
   TextDelete, 
   TitleCards, 
   TitleDelete,
-
+  ButtonSearchContainer
  } from "./styles";
 
- interface DataProps{
-  valueSearch: string
- }
 
 export function Home(){
   const [pokemonList, setPokemonList] = useState([]);
-  const [previous, setPrevious] = useState(null);
-  const [next, setNext] = useState(null);
   const [valueSearch, setValueSearch] = useState("");
   const [newCard, setNewCard] = useState([]);
   const [dataSearch, setDataSearch] = useState([]);
@@ -55,9 +50,7 @@ export function Home(){
   const [isOpen, setIsOpen] = useState(false);
   const [animation, setAnimation] = useState(false);
   const [warning, setWarning] = useState(false);
-  const [endPointRequest, setEndPointRequest] = useState(
-    "pokemon?limit=16&offset=0"
-  );
+  const [endPointRequest, setEndPointRequest] = useState("pokemon?limit=20");
 
   const pokemonRequest = useQuery("pokemonRequest", async () => {
     const { data }: any = await api
@@ -66,7 +59,7 @@ export function Home(){
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);       
       });
-     
+
     return data;
   });
 
@@ -76,18 +69,17 @@ export function Home(){
 
   useEffect(() => {
     setPokemonList(pokemonRequest?.data?.results || []);
-    setPrevious(pokemonRequest?.data?.previous);
-    setNext(pokemonRequest?.data?.next);
   }, [pokemonRequest?.data]); 
 
   useEffect(() => {
     setDataSearch([...newCard]);
   }, [newCard]); 
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setValueSearch(value);
 
-    const search = dataSearch.filter((item) => {
+  const handleChange = (text) => {
+    const { value } = text.target;
+    setValueSearch(value);
+   
+    const search = pokemonList.filter((item) => {
       return !item.name.toLowerCase().indexOf(value.toLowerCase());
     });
 
@@ -122,7 +114,7 @@ export function Home(){
 
     setNewCard(
       newCard.filter(
-        (i) => i.name !== value.name || i.front_default !== value.front_default
+        (item) => item.name !== value.name || item.front_default !== value.front_default
       )
     );
 
@@ -133,8 +125,7 @@ export function Home(){
     <ContainerWarning>
       <ExitDelete onClick={() => setWarning(false)} src={exit} alt="Sair" />
       <p>
-        Os cards iniciais não podem ser editados ou excluidos, tente modificar
-        os novos cards.
+        Apenas os cards novos podem ser excluídos ou editados.
       </p>
     </ContainerWarning>
   );
@@ -142,12 +133,13 @@ export function Home(){
   const ModalDelete = () => (
     <ContainerDelete>
       <ExitDelete onClick={() => setDataDelete([])} src={exit} alt="Sair" />
-      <IconDelete>
-        <img src={trash} alt="Icone de excluir" />
-      </IconDelete>
-      <TitleDelete>Excluir</TitleDelete>
-      <TextDelete>CERTEZA QUE DESEJA EXCLUIR?</TextDelete>
+        <IconDelete>
+          <img src={trash} alt="Icone de excluir" />
+        </IconDelete>
+        <TitleDelete>Excluir</TitleDelete>
+        <TextDelete>CERTEZA QUE DESEJA EXCLUIR?</TextDelete>
       <Line />
+
       <ContainerButtons>
         <Button
           widthButton="48%"
@@ -181,7 +173,10 @@ export function Home(){
             onChange={(value) => handleChange(value)}
             placeholder="Digite aqui sua busca..."
           />
-          <ButtonSearch src={search} alt="Lupa de busca" />
+           <ButtonSearchContainer onChange={handleChange}>
+            <ButtonSearch src={search} alt="Lupa de busca" />
+          </ButtonSearchContainer>
+
         </SearchLabel>
       </ContainerSearch>
       <ContainerCards>
@@ -204,7 +199,6 @@ export function Home(){
             <>
               {dataSearch.map((item) => {
                 if (!item) return null;
-
                 return (
                   <Card
                     key={Math.random().toString(36).substr(2, 9)}
@@ -233,33 +227,9 @@ export function Home(){
             </>
           )}
         </GroupCards>
-        <ContainerPaginate>
-          {valueSearch === "" && previous && (
-            <Paginate
-              onClick={() => {
-                const endPoint = previous.replace(
-                  "https://pokeapi.co/api/v2/",
-                  ""
-                );
-                setEndPointRequest(endPoint);
-              }}
-            >
-              &#8678;
-            </Paginate>
-          )}
-          {valueSearch === "" && next && (
-            <Paginate
-              onClick={() => {
-                const endPoint = next.replace("https://pokeapi.co/api/v2/", "");
-                setEndPointRequest(endPoint);
-              }}
-            >
-              &#8680;
-            </Paginate>
-          )}
-        </ContainerPaginate>
       </ContainerCards>
-      {(isOpen || dataUpdate?.length) && (
+      
+      {(isOpen) && (
         <BaseModal
           closeModal={() => {
             setTimeout(() => {
