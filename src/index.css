@@ -1,13 +1,62 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --color_white: #ffffff;
+  --color_black: #000000;
+  --color_orange: #e76316;
+  --color_purple: #5f1478;
+  --color_blue: #263238;
+  --color_pink: #ae276f;
+  --color_red: #db2525;
+  --color_gray: #f6f4f6;
+  --color_lightGray: #d4d4d4;
+  --color_mediumGray: #757575;
+  --color_darkGray: #454545;
+}
+*,
+*::after,
+*::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 1900px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 3800px) {
+  html {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 648px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+body,
+input {
+  font-family: "Mulish", sans-serif;
+}
+
+button,
+a {
+  cursor: pointer;
+  font-family: "Mulish", sans-serif;
 }
