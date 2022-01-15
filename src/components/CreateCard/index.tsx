@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 
-import { 
-  Container, 
-  ExitDelete, 
-  Header, 
-  HeaderImage, 
-  HeaderTitle, 
-  Input, 
-  Label, 
-  RowHeader, 
-  TitleInput 
+import {
+  Container,
+  ExitDelete,
+  Header,
+  HeaderImage,
+  HeaderTitle,
+  Input,
+  Label,
+  RowHeader,
+  TitleInput
 } from "./styles";
 
 import Button from "../Button";
 import createCard from "../../assets/create.svg";
 
-import  exit from "../../assets/exit.png";
+import exit from "../../assets/exit.png";
 
 interface CardProps {
   handleAdd?: any;
@@ -26,7 +26,7 @@ interface CardProps {
   handleUpdate?: any;
 }
 
- function CreateCard({
+function CreateCard({
   handleAdd,
   closeModal,
   dataUpdate,
@@ -76,7 +76,7 @@ interface CardProps {
   };
 
   return (
-    <Container       
+    <Container
       onClick={(ev) => ev.stopPropagation()}
       onKeyDown={(e) => handleCreateCard(e)}
     >
@@ -87,7 +87,7 @@ interface CardProps {
         <RowHeader>
           <HeaderImage src={createCard} alt="Icone de criar card" />
           <HeaderTitle>Criar Card</HeaderTitle>
-        </RowHeader>     
+        </RowHeader>
       </Header>
       <TitleInput>DIGITE UM NOME PARA O CARD</TitleInput>
       <Input
@@ -137,7 +137,7 @@ interface CardProps {
             : "Escolher arquivo"}
         </Button>
       )}
-     
+
       <Button
         funcAction={() => {
           dataUpdate.name ? handleUpdate(newCard) : handleAdd(newCard);

@@ -4,29 +4,30 @@ import Button from "../../../components/Button";
 import trash from "../../../assets/trash.svg";
 import exit from "../../../assets/exit.png";
 
-import { 
-  ContainerButtons, 
-  ContainerDelete, 
-  ExitDelete, 
-  IconDelete, 
-  Line, 
-  TextDelete, 
-  TitleDelete } from "./styles";
-  
+import {
+  ContainerButtons,
+  ContainerDelete,
+  ExitDelete,
+  IconDelete,
+  Line,
+  TextDelete,
+  TitleDelete
+} from "./styles";
 
-interface Props{
+
+interface Props {
   setDataDelete?: any;
   handleDelete?: () => void;
 }
 
-const ModalDelete = ({setDataDelete, handleDelete}: Props) => (
+const ModalDelete = ({ setDataDelete, handleDelete }: Props) => (
   <ContainerDelete>
     <ExitDelete onClick={() => setDataDelete([])} src={exit} alt="Sair" />
-      <IconDelete>
-        <img src={trash} alt="Icone de excluir" />
-      </IconDelete>
-      <TitleDelete>Excluir</TitleDelete>
-      <TextDelete>CERTEZA QUE DESEJA EXCLUIR?</TextDelete>
+    <IconDelete>
+      <img src={trash} alt="Icone de excluir" />
+    </IconDelete>
+    <TitleDelete>Excluir</TitleDelete>
+    <TextDelete>CERTEZA QUE DESEJA EXCLUIR?</TextDelete>
     <Line />
 
     <ContainerButtons>

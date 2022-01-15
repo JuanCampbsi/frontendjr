@@ -13,7 +13,7 @@ export const ContainerDelete = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--color_white);
+  background: ${({ theme }) => theme.colors.secondary_container};
   padding: 3.125rem 2.25rem 2.0625rem 2.25rem;
   position: relative;
   cursor: initial;
@@ -41,7 +41,7 @@ export const IconDelete = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #db25250f;
+  background: ${({ theme }) => theme.colors.secondary_icon};
   border-radius: 50%;
   border: 0.375rem solid var(--color_lightGray);
   padding: 2.8125rem 2.625rem;
@@ -61,7 +61,7 @@ export const Line = styled.div`
 export const TextDelete = styled.p`
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color_darkGray);
+  color: ${({ theme }) => theme.colors.tertiary_text};
   margin-bottom: 1.75rem;
 `;
 
@@ -69,7 +69,7 @@ export const TextDelete = styled.p`
 export const TitleDelete = styled.h2`
   font-size: 2rem;
   font-weight: 700;
-  color: var(--color_red);
+  color:  ${({ theme }) => theme.colors.tertiary_title};
   margin-top: 0.8125rem;
   margin-bottom: 1.5625rem;
 `;

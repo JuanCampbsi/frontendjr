@@ -7,14 +7,14 @@ interface Props {
   setWarning?: any;
 }
 
-const ModalWarning = ({setWarning} : Props) => (
+const ModalWarning = ({ setWarning }: Props) => (
   <ContainerWarning>
-    <ExitDelete onClick={() => 
-      setWarning(false)} 
+    <ExitDelete onClick={() =>
+      setWarning(false)}
       src={exit} alt="Sair" />
-      <p>
-        Apenas os cards novos podem ser excluídos ou editados.
-      </p>
+    <p>
+      Apenas os cards novos podem ser excluídos ou editados.
+    </p>
   </ContainerWarning>
 );
 

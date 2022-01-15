@@ -2,13 +2,13 @@ import React from "react";
 
 import { Container } from "./styles";
 
-export interface Props{
+export interface Props {
   funcAction?: (value: any) => void;
   widthButton?: string;
   positionButton?: string;
   topButton?: string;
   rightButton?: string;
-  paddingButton?:  string;
+  paddingButton?: string;
   heightButton?: string;
   colorButton?: string;
   borderButton?: string;
@@ -18,7 +18,7 @@ export interface Props{
   children: React.ReactNode
 }
 
-export default function Button({  
+export default function Button({
   funcAction,
   widthButton,
   positionButton,
@@ -32,7 +32,7 @@ export default function Button({
   backgroundButton,
   disabled,
   children
-}: Props){
+}: Props) {
   return (
     <Container
       type="button"

@@ -14,24 +14,24 @@ import CreateCard from "../../components/CreateCard/index";
 import ModalDelete from "../Modal/ModalDelete";
 import ModalWarning from "../Modal/ModalWarning";
 
-import { 
+import {
   ButtonSearch,
   Container,
   ContainerCards,
   ContainerSearch,
-  GroupCards, 
-  Header, 
-  HeaderCards, 
-  Logo, 
-  Message, 
-  Search, 
-  SearchLabel, 
-  TitleCards, 
+  GroupCards,
+  Header,
+  HeaderCards,
+  Logo,
+  Message,
+  Search,
+  SearchLabel,
+  TitleCards,
   ButtonSearchContainer
- } from "./styles";
+} from "./styles";
 
- 
-export function Home(){
+
+export function Home() {
   const [pokemonList, setPokemonList] = useState([]);
   const [valueSearch, setValueSearch] = useState("");
   const [newCard, setNewCard] = useState([]);
@@ -48,7 +48,7 @@ export function Home(){
       .get(endPointRequest)
       .then((response) => response)
       .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);       
+        console.error("ops! ocorreu um erro" + err);
       });
 
     return data;
@@ -56,20 +56,20 @@ export function Home(){
 
   useEffect(() => {
     pokemonRequest.refetch();
-  }, [endPointRequest]); 
+  }, [endPointRequest]);
 
   useEffect(() => {
     setPokemonList(pokemonRequest?.data?.results || []);
-  }, [pokemonRequest?.data]); 
+  }, [pokemonRequest?.data]);
 
   useEffect(() => {
     setDataSearch([...newCard]);
-  }, [newCard]); 
+  }, [newCard]);
 
   const handleChange = (text) => {
     const { value } = text.target;
     setValueSearch(value);
-   
+
     const search = pokemonList.filter((item) => {
       return !item.name.toLowerCase().indexOf(value.toLowerCase());
     });
@@ -83,17 +83,18 @@ export function Home(){
 
   const handleAdd = (value) => {
     setNewCard([...newCard, value]);
+
   };
 
   const handleUpdate = (value) => {
     const updated = newCard.map((card) =>
       card.name === dataUpdate.name ||
-      card.front_default === dataUpdate.front_default
+        card.front_default === dataUpdate.front_default
         ? {
-            ...card,
-            name: value.name,
-            front_default: value.front_default,
-          }
+          ...card,
+          name: value.name,
+          front_default: value.front_default,
+        }
         : card
     );
 
@@ -101,7 +102,7 @@ export function Home(){
   };
 
   const handleDelete = () => {
-    const value:any = dataDelete;
+    const value: any = dataDelete;
 
     setNewCard(
       newCard.filter(
@@ -124,7 +125,7 @@ export function Home(){
             onChange={(value) => handleChange(value)}
             placeholder="Digite aqui sua busca..."
           />
-           <ButtonSearchContainer onChange={handleChange}>
+          <ButtonSearchContainer onChange={handleChange}>
             <ButtonSearch src={search} alt="Lupa de busca" />
           </ButtonSearchContainer>
         </SearchLabel>
@@ -150,28 +151,29 @@ export function Home(){
             </Message>
           ) : (
             <>
-              { dataSearch.map((item) => {
+              {dataSearch.map((item) => {
                 if (!item) return null;
                 return (
                   <Card
                     key={Math.random().toString(36).substr(2, 9)}
                     setDataDelete={setDataDelete}
-                    result={item}       
+                    dataCard={item}
+                    result={item}
                     setIsOpen={setIsOpen}
-                    setWarning={setWarning}
+                    setWarning={false}
                     setDataUpdate={setDataUpdate}
                   />
                 );
               })}
 
-              { valueSearch === "" &&
+              {valueSearch === "" &&
                 pokemonList.map((item) => {
                   if (!item) return null;
                   return (
                     <Card
                       key={Math.random().toString(36).substr(2, 9)}
                       setDataDelete={setDataDelete}
-                      result={item}                
+                      result={item}
                       setIsOpen={setIsOpen}
                       setWarning={setWarning}
                     />
@@ -181,7 +183,7 @@ export function Home(){
           )}
         </GroupCards>
       </ContainerCards>
-      
+
       {(isOpen) && (
         <BaseModal
           closeModal={() => {
@@ -214,15 +216,15 @@ export function Home(){
         <BaseModal closeModal={() => setDataDelete([])}>
           {
             <ModalDelete
-             setDataDelete={setDataDelete}
-             handleDelete={handleDelete}
+              setDataDelete={setDataDelete}
+              handleDelete={handleDelete}
             />
           }
         </BaseModal>
       )}
       {warning && (
         <BaseModal closeModal={() => setWarning(false)}>
-          { 
+          {
             <ModalWarning
               setWarning={setWarning}
             />

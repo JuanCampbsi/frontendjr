@@ -5,14 +5,14 @@ import defaultCard from "../../assets/default-card.svg";
 import edit from "../../assets/edit.svg";
 import trash from "../../assets/trash.svg";
 
-import { 
-  Button, 
-  Buttons, 
-  Card, 
-  CircleImageCard, 
-  Container, 
-  Line, 
-  TextCard 
+import {
+  Button,
+  Buttons,
+  Card,
+  CircleImageCard,
+  Container,
+  Line,
+  TextCard
 } from "./styles";
 
 interface Props {
@@ -42,7 +42,7 @@ const CardComponent = ({
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
       });
-  }, [result]); 
+  }, [result]);
 
   return (
     <Container>
@@ -53,8 +53,8 @@ const CardComponent = ({
               dataCard?.front_default?.preview
                 ? dataCard?.front_default?.preview
                 : data?.sprites?.front_default
-                ? data?.sprites?.front_default
-                : defaultCard
+                  ? data?.sprites?.front_default
+                  : defaultCard
             }
             alt="Imagem do card"
           />

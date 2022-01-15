@@ -6,10 +6,13 @@ export const Overlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f6f4f6cc;
+
+  background: ${({ theme }) => theme.colors.tertiary_overlay};
+  
   z-index: 10;
   cursor: pointer;
 `;

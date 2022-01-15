@@ -1,7 +1,7 @@
 <p align="center">
 <h1>
  FrontEnd Jr 
- <img width="170" style="border-radius: 10px" height="37" src="https://github.com/JuanCampbsi/frontendjr/blob/02d23696b4eba860c1c633b359351911e6c11c80/src/assets/Impar_fivicon.png" alt="Intro"> 
+ <img width="150" style="border-radius: 10px" height="37" src="https://github.com/JuanCampbsi/frontendjr/blob/02d23696b4eba860c1c633b359351911e6c11c80/src/assets/Impar_fivicon.png" alt="Intro"> 
 </h1>
 </p>
 
@@ -9,7 +9,7 @@
 
 </br>
 
-O projeto tem como o objetivo cadastrar cards para visualização, sendo possível excluir e editar os mesmos.
+O projeto tem como o objetivo consumir informações de uma api como `pokeapi` e visualizar em forma de cards. Além disso o usuário pode cadastrar, excluir e editar novos cards.
 
 
 ## Preview 📱
@@ -52,6 +52,7 @@ $ yarn start
 -   [React](https://github.com/facebook/react) (17.0.38)
 -   [Typescript](https://www.typescriptlang.org/)
 -   [Styled Components](https://www.styled-components.com/)
+-   [React Query](https://react-query.tanstack.com/reference/QueryClient) (Ferramenta de gerenciamento de estado)
 
 </br>
 
