@@ -9,7 +9,8 @@ import {
   Input,
   Label,
   RowHeader,
-  TitleInput
+  TitleInput,
+  Line
 } from "./styles";
 
 import Button from "../Button";
@@ -18,21 +19,23 @@ import createCard from "../../assets/create.svg";
 import exit from "../../assets/exit.png";
 
 interface CardProps {
-  handleAdd?: any;
-  closeModal?: any;
+  handleAdd: any;
+  closeModal: any;
   animation?: any;
-  dataUpdate?: any;
-  setDataUpdate?: any;
-  handleUpdate?: any;
+  dataUpdate: any;
+  setDataUpdate: any;
+  handleUpdate: any;
 }
 
 function CreateCard({
   handleAdd,
   closeModal,
+  animation,
   dataUpdate,
   setDataUpdate,
   handleUpdate
 }: CardProps) {
+
   const [newCard, setNewCard] = useState<any>({});
 
   const selectFile = () => {
@@ -77,8 +80,8 @@ function CreateCard({
 
   return (
     <Container
-      onClick={(ev) => ev.stopPropagation()}
-      onKeyDown={(e) => handleCreateCard(e)}
+      onClick={(value) => value.stopPropagation()}
+      onKeyDown={(value) => handleCreateCard(value)}
     >
       <Header>
         {window.innerWidth <= 648 && (
@@ -88,6 +91,7 @@ function CreateCard({
           <HeaderImage src={createCard} alt="Icone de criar card" />
           <HeaderTitle>Criar Card</HeaderTitle>
         </RowHeader>
+        <Line />
       </Header>
       <TitleInput>DIGITE UM NOME PARA O CARD</TitleInput>
       <Input
@@ -137,9 +141,9 @@ function CreateCard({
             : "Escolher arquivo"}
         </Button>
       )}
-
+      <Line marginBottom="1.625rem" />
       <Button
-        funcAction={() => {
+          funcAction={() => {
           dataUpdate.name ? handleUpdate(newCard) : handleAdd(newCard);
           closeModal();
           setDataUpdate([]);

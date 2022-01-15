@@ -30,12 +30,12 @@ import {
   ButtonSearchContainer
 } from "./styles";
 
-
 export function Home() {
-  const [pokemonList, setPokemonList] = useState([]);
+  const [pokemonList, setPokemonList] = useState<any>([]);
   const [valueSearch, setValueSearch] = useState("");
   const [newCard, setNewCard] = useState([]);
-  const [dataSearch, setDataSearch] = useState([]);
+  const [dataSearch, setDataSearch] = useState<any>([]);
+  const [dataSearchNew, setDataSearchNew] = useState<any>([]);
   const [dataDelete, setDataDelete] = useState<any>([]);
   const [dataUpdate, setDataUpdate] = useState<any>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -56,21 +56,21 @@ export function Home() {
 
   useEffect(() => {
     pokemonRequest.refetch();
-  }, [endPointRequest]);
-
-  useEffect(() => {
     setPokemonList(pokemonRequest?.data?.results || []);
-  }, [pokemonRequest?.data]);
-
-  useEffect(() => {
     setDataSearch([...newCard]);
-  }, [newCard]);
+  }, [endPointRequest, pokemonRequest?.data, newCard]);
 
-  const handleChange = (text) => {
-    const { value } = text.target;
+
+  function handleChange(e) {
+    const { value } = e.target;
     setValueSearch(value);
+    setDataSearchNew([...pokemonList])
 
-    const search = pokemonList.filter((item) => {
+    const search = dataSearch.filter((item) => {
+      return !item.name.toLowerCase().indexOf(value.toLowerCase());
+    });
+
+    const searchNew = dataSearchNew.filter((item) => {
       return !item.name.toLowerCase().indexOf(value.toLowerCase());
     });
 
@@ -78,15 +78,15 @@ export function Home() {
       setDataSearch([...newCard]);
     } else {
       setDataSearch(search);
+      setDataSearchNew(searchNew)
     }
   };
 
-  const handleAdd = (value) => {
+  function handleAdd(value) {
     setNewCard([...newCard, value]);
-
   };
 
-  const handleUpdate = (value) => {
+  function handleUpdate(value) {
     const updated = newCard.map((card) =>
       card.name === dataUpdate.name ||
         card.front_default === dataUpdate.front_default
@@ -97,11 +97,10 @@ export function Home() {
         }
         : card
     );
-
     setNewCard(updated);
   };
 
-  const handleDelete = () => {
+  function handleDelete() {
     const value: any = dataDelete;
 
     setNewCard(
@@ -125,7 +124,7 @@ export function Home() {
             onChange={(value) => handleChange(value)}
             placeholder="Digite aqui sua busca..."
           />
-          <ButtonSearchContainer onChange={handleChange}>
+          <ButtonSearchContainer>
             <ButtonSearch src={search} alt="Lupa de busca" />
           </ButtonSearchContainer>
         </SearchLabel>
@@ -158,7 +157,6 @@ export function Home() {
                     key={Math.random().toString(36).substr(2, 9)}
                     setDataDelete={setDataDelete}
                     dataCard={item}
-                    result={item}
                     setIsOpen={setIsOpen}
                     setWarning={false}
                     setDataUpdate={setDataUpdate}
@@ -178,7 +176,24 @@ export function Home() {
                       setWarning={setWarning}
                     />
                   );
-                })}
+                })
+              }
+
+              {
+                dataSearchNew.map((item) => {
+                  if (!item) return null;
+                  return (
+                    <Card
+                      key={Math.random().toString(36).substr(2, 9)}
+                      setDataDelete={setDataDelete}
+                      dataCard={item}
+                      result={item}
+                      setIsOpen={setIsOpen}
+                      setWarning={setWarning}
+                    />
+                  );
+                })
+              }
             </>
           )}
         </GroupCards>

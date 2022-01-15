@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface Props {
+  marginBottom?: any;  
+}
+
 export const Container = styled.div`
   width: 40.125rem;
   height: 47.9375rem;
@@ -125,4 +129,11 @@ export const Label = styled.label`
     width: 100%;
     overflow-x: hidden;
   }
+`;
+
+export const Line = styled.div<Props>`
+  width: 100%;
+  height: 0.0625rem;
+  background: var(--color_lightGray);
+  margin-bottom: ${(props) => props.marginBottom};
 `;
