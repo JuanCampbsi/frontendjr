@@ -9,5 +9,6 @@ declare module '*.svg' {
 }
 
 declare module "*.svg"
-
 declare module "*";
+declare module '*.jpg';
+declare module '*.png';

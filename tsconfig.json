@@ -21,5 +21,11 @@
     "jsx": "react-jsx",
     "typeRoots": ["./src/@types", "./node_modules/@types", "./typings"]
   },
-  "files": ["index.d.ts"],
+  "files": ["declaration.d.ts"],
+  "include": ["declaration.d.ts"],
+  
+  
+  "typeRoots" : ["node_modules/@types", "src/types"]
+   
+  
 }
