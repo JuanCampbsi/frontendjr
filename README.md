@@ -24,7 +24,6 @@ Interface do usuário.
 </p>
 
 </br>
-</br>
 
 ## Test com Jest 🧪
  Testes unitários de componentes e páginas da aplicação, utilizando a ferramenta jest.
@@ -36,7 +35,6 @@ Interface do usuário.
   </br>
 </p>
 
-</br>
 </br>
 
 ### ⌨ Instalação
