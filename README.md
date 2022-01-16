@@ -1,7 +1,7 @@
 <p align="center">
 <h1>
  FrontEnd Jr 
- <img width="150" style="border-radius: 10px" height="37" src="https://github.com/JuanCampbsi/frontendjr/blob/02d23696b4eba860c1c633b359351911e6c11c80/src/assets/Impar_fivicon.png" alt="Intro"> 
+ <img width="110" style="border-radius: 10px" height="30" src="https://github.com/JuanCampbsi/frontendjr/blob/02d23696b4eba860c1c633b359351911e6c11c80/src/assets/Impar_fivicon.png" alt="Intro"> 
 </h1>
 </p>
 
@@ -13,6 +13,7 @@ O projeto tem como o objetivo consumir informações de uma api como `pokeapi` e
 
 
 ## Preview 📱
+Interface do usuário.
 </br>
 
 <p align="center">
@@ -26,8 +27,8 @@ O projeto tem como o objetivo consumir informações de uma api como `pokeapi` e
 </br>
 
 ## Test com Jest 🧪
-</br>
-
+ Testes unitários de componentes e páginas da aplicação, utilizando a ferramenta jest.
+ </br>
 <p align="center">
   <kbd>
  <img width="850" style="border-radius: 10px" height="550" src="https://github.com/JuanCampbsi/frontendjr/blob/e6e9a6f6e3ec3ba8c528a916c97a1ee60cadd8e8/src/assets/testpreview.gif" alt="Intro"> 
@@ -64,8 +65,9 @@ $ yarn start
 
 -   [React](https://github.com/facebook/react) (17.0.38)
 -   [Typescript](https://www.typescriptlang.org/)
--   [Styled Components](https://www.styled-components.com/)
+-   [Styled Components](https://www.styled-components.com/) 
 -   [React Query](https://react-query.tanstack.com/reference/QueryClient) (Ferramenta de gerenciamento de estado)
+-   [Jest](https://jestjs.io/pt-BR/docs/tutorial-react) (Ferramenta de testes unitários)
 
 </br>
 
