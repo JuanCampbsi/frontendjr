@@ -61,7 +61,7 @@ $ yarn start
 
 ### ⌨ Pilha de tecnologias e bibliotecas
 
--   [React](https://github.com/facebook/react) (17.0.38)
+-   [React](https://github.com/facebook/react)
 -   [Typescript](https://www.typescriptlang.org/)
 -   [Styled Components](https://www.styled-components.com/) 
 -   [React Query](https://react-query.tanstack.com/reference/QueryClient) (Ferramenta de gerenciamento de estado)
