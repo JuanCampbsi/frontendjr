@@ -25,6 +25,19 @@ O projeto tem como o objetivo consumir informações de uma api como `pokeapi` e
 </br>
 </br>
 
+## Test com Jest 🧪
+</br>
+
+<p align="center">
+  <kbd>
+ <img width="850" style="border-radius: 10px" height="550" src="https://github.com/JuanCampbsi/frontendjr/blob/e6e9a6f6e3ec3ba8c528a916c97a1ee60cadd8e8/src/assets/testpreview.gif" alt="Intro"> 
+  </kbd>
+  </br>
+</p>
+
+</br>
+</br>
+
 ### ⌨ Instalação
 Para a utilização é preciso clonar o repositório, instalar as depedências e rodar o projeto.
 
