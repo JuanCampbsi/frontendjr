@@ -19,18 +19,16 @@ import createCard from "../../assets/create.svg";
 import exit from "../../assets/exit.png";
 
 interface CardProps {
-  handleAdd: any;
-  closeModal: any;
-  animation?: any;
-  dataUpdate: any;
-  setDataUpdate: any;
-  handleUpdate: any;
+  handleAdd?: any;
+  closeModal?: any;
+  dataUpdate?: any;
+  setDataUpdate?: any;
+  handleUpdate?: any;
 }
 
 function CreateCard({
   handleAdd,
   closeModal,
-  animation,
   dataUpdate,
   setDataUpdate,
   handleUpdate

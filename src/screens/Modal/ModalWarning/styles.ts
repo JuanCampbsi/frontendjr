@@ -7,7 +7,7 @@ export const ContainerWarning = styled.div`
   font-size: 1rem;
   font-weight: 700;
   color: var(--color_darkGray);
-  background: ${({ theme }) => theme.colors.secondary_container};
+  background: var(--color_white);
   position: relative;
   padding: 2.125rem 2.25rem 2.0625rem 2.25rem;
 

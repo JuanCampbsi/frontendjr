@@ -11,7 +11,7 @@ export const Overlay = styled.div`
   align-items: center;
   justify-content: center;
 
-  background: ${({ theme }) => theme.colors.tertiary_overlay};
+  background: #f6f4f6cc;
   
   z-index: 10;
   cursor: pointer;

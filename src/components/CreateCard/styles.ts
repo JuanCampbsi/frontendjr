@@ -11,7 +11,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  background: ${({ theme }) => theme.colors.secondary_container};
+  background: var(--color_white);
 
   position: absolute;
   top: 0;
@@ -77,7 +77,7 @@ export const HeaderTitle = styled.h2`
   font-size: 2rem;
   font-weight: 700;
 
-  color: ${({ theme }) => theme.colors.secondary_title};
+  color: var(--color_purple);
 
   margin-bottom: 2rem;
 `;
@@ -90,13 +90,13 @@ export const TitleInput = styled.h2`
   font-size: 0.875rem;
   font-weight: 700;
 
-  color: ${({ theme }) => theme.colors.tertiary_text};
+  color: var(--color_darkGray);
 `;
 
 export const Input = styled.input`
   width: 100%;
 
-  color: ${({ theme }) => theme.colors.primary_text};
+  color: var(--color_mediumGray);
 
   font-size: 1.125rem 1.5625rem;
   font-weight: 300;
@@ -121,7 +121,7 @@ export const Label = styled.label`
   border-radius: 0.5rem;
 
   p {
-    color: ${({ theme }) => theme.colors.primary_text};
+    color: var(--color_mediumGray);
 
     font-size: 1.125rem 1.5625rem;
     font-weight: 300;

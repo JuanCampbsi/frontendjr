@@ -5,7 +5,6 @@ import { useQuery } from "react-query";
 import logo from "../../assets/logo.png";
 import search from "../../assets/search.svg";
 
-
 import Button from "../../components/Button";
 import Card from "../../components/Card";
 import api from "../../Api";
@@ -55,7 +54,6 @@ export function Home() {
   });
 
   useEffect(() => {
-    pokemonRequest.refetch();
     setPokemonList(pokemonRequest?.data?.results || []);
     setDataSearch([...newCard]);
   }, [endPointRequest, pokemonRequest?.data, newCard]);
@@ -211,8 +209,7 @@ export function Home() {
           }}
         >
           <CreateCard
-            handleAdd={handleAdd}
-            animation={animation}
+            handleAdd={handleAdd}           
             handleUpdate={handleUpdate}
             dataUpdate={dataUpdate}
             setDataUpdate={setDataUpdate}

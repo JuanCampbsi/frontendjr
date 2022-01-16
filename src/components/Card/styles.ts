@@ -21,7 +21,7 @@ export const Card = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background:  ${({ theme }) => theme.colors.secondary_container};
+  background:  var(--color_white);
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
   border-radius: 0.5rem 0.5rem 0 0;
@@ -39,7 +39,7 @@ export const CircleImageCard = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 1.625rem;
-  background: ${({ theme }) => theme.colors.primary};
+  background: var(--color_gray);
   border: 0.0625rem solid #e4e4e4;
   overflow: hidden;
 
@@ -51,7 +51,7 @@ export const CircleImageCard = styled.div`
 export const Line = styled.div`
   width: 80%;
   height: 0.0625rem;
-  background: ${({ theme }) => theme.colors.primary};
+  background: var(--color_gray);
   margin-bottom: 0.625rem;
 `;
 
@@ -64,7 +64,7 @@ export const TextCard = styled.p`
   text-align: justify;
   font-size: 1rem;
   font-weight: 400;
-  color: ${({ theme }) => theme.colors.primary_container};
+  color: var(--color_blue);
   text-align: center;
   padding: 2rem 1.375rem;
   word-break: break-word;
@@ -77,7 +77,7 @@ export const TextCard = styled.p`
 export const Buttons = styled.div`
   display: flex;
   border-radius: 0 0 0.5rem 0.5rem;
-  background: ${({ theme }) => theme.colors.secondary_container};
+  background: var(--color_white);
   box-shadow: inset 0 0.1875rem 0.375rem #0000000f;
   padding: 0.8125rem 0;
 `;
@@ -92,7 +92,7 @@ export const Button = styled.button<Props>`
   background: none;
   border: none;
   outline: none;
-  color: ${({ theme }) => theme.colors.secondary_button};
+  color: var(--color_lightGray);
 
   :hover {
     color: ${(theme) =>
