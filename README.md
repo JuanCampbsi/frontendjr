@@ -30,7 +30,7 @@ Interface do usuário.
  </br>
 <p align="center">
   <kbd>
- <img width="850" style="border-radius: 10px" height="550" src="https://github.com/JuanCampbsi/frontendjr/blob/e6e9a6f6e3ec3ba8c528a916c97a1ee60cadd8e8/src/assets/testpreview.gif" alt="Intro"> 
+ <img width="800" style="border-radius: 10px" height="430" src="https://github.com/JuanCampbsi/frontendjr/blob/e6e9a6f6e3ec3ba8c528a916c97a1ee60cadd8e8/src/assets/testpreview.gif" alt="Intro"> 
   </kbd>
   </br>
 </p>
